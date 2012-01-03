@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:sws="http://www.springframework.org/schema/web-services"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-2.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:component-scan base-package="at.ac.iiasa.ime.enrima.example.ws.endpoint"/>
+    <bean class="at.ac.iiasa.ime.enrima.soap.MySoapMessageFactory" id="messageFactory" /> 
+    <sws:annotation-driven/>
+        <sws:interceptors>
+        <bean class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor"/>
+        <bean class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+            <property name="xsdSchemaCollection" ref="schemaCollection"/>
+            <property name="validateRequest" value="false"/>
+            <property name="validateResponse" value="true"/>
+        </bean>
+
+    </sws:interceptors>
+    
+    <bean id="schemaCollection" class="org.springframework.xml.xsd.commons.CommonsXsdSchemaCollection">
+        <description>
+            This bean wrap the enrima-model-ws.xsd (which imports enrima-model-ws.xsd), and inlines them as a one.
+        </description>
+        <property name="xsds" value="/WEB-INF/enrima-model-ws.xsd"/>
+        <property name="inline" value="true"/>
+    </bean>
+    
+
+    <sws:dynamic-wsdl id="enrima" portTypeName="enrima" locationUri="/enrima/"
+                      targetNamespace="http://www.ime.iiasa.ac.at/enrima/example">
+        <sws:xsd location="/WEB-INF/enrima-model-ws.xsd"/>
+    </sws:dynamic-wsdl>
+
+
+
+
+</beans>

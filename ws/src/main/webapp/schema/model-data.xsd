@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:ms="http://www.ime.iiasa.ac.at/smt/modelspec"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.ime.iiasa.ac.at/smt/modeldata" elementFormDefault="qualified"
+    xmlns:modeldata="http://www.ime.iiasa.ac.at/smt/modeldata">
+    <xs:import schemaLocation="model-spec.xsd"  namespace="http://www.ime.iiasa.ac.at/smt/modelspec" />
+    <xs:complexType name="dataUpdate">
+        <xs:all>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="idModel" type="xs:int" />
+            <xs:element name="parent" type="xs:int" />
+            <xs:element name="shortDesc" type="ms:shortDesc"/> 
+            <xs:element name="auditable"  type="ms:auditable" />
+            <xs:element name="status" type="ms:status" />
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="noneIndexedSetData">
+        <xs:sequence>
+            <xs:element name="idUpdate" type="xs:int" />
+            <xs:element name="setSpec" type="ms:set" />
+            <xs:element name="member" type="modeldata:memberDic" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="indexedSetData">
+        <xs:sequence>
+            <xs:element name="idUpdate" type="xs:int" />
+            <xs:element name="setSpec" type="ms:set" />
+            <xs:element name="tupleMemebers" type="modeldata:tupleMembers" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="entityData">
+        <xs:sequence>
+            <xs:element name="idUpdate" type="xs:int" />
+            <xs:element name="entitySpec" type="ms:entity" />
+            <xs:element name="tupleValue" type="modeldata:tupleValue" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+   
+    <xs:complexType name="tupleMembers">
+       <xs:all>
+           <xs:element name="tuple" type="xs:string" />
+           <xs:element name="members" type="xs:string" />
+       </xs:all>
+   </xs:complexType>
+    
+    <xs:complexType name="tupleValue">
+        <xs:all>
+            <xs:element name="tuple" type="xs:string" />
+            <xs:element name="value" type="xs:float" />
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="memberDic">
+        <xs:all>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="code" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

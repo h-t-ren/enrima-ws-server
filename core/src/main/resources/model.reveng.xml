@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering SYSTEM "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+
+	
+ 	<table-filter match-name="obj.*" exclude="true" />
+	<!-- 
+	<table-filter match-name="acs.*" exclude="true" />
+	<table-filter match-name="athntctn.*" exclude="true" />
+	<table-filter match-name="cntr" exclude="true" />
+	<table-filter match-name="edt_sts" exclude="true" />
+	<table-filter match-name="lbl.*" exclude="true" />
+	<table-filter match-name="lcl" exclude="true" />
+	<table-filter match-name="lng" exclude="true" />
+	<table-filter match-name="msg.*" exclude="true" />
+	<table-filter match-name="rl" exclude="true" />
+	<table-filter match-name="sn" exclude="true" />
+	<table-filter match-name="srvc" exclude="true" />
+	<table-filter match-name="usr_lg" exclude="true" />
+	<table-filter match-name="usr_grp.*" exclude="true" />
+	-->
+    <table-filter match-name=".*" package="at.ac.iiasa.ime.enrima.domain" />
+      <table name="acs"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__acs__id_acs</param>
+           </generator>
+      </primary-key>
+    </table>
+     <table name="acs_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__acs_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+     <table name="rl"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__rl__id_rl</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="athnctn_usr_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__athnctn_usr_lg__id_lg</param>      
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="srvc"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__srvc__id_srvc</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="sn"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__sn__id_sn</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="lbl"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__lbl__id_lbl</param>
+           </generator>
+      </primary-key>
+    </table>
+        
+    <table name="lbl_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__lbl_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+      <table name="lbl_lcl_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__lbl_lcl_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+        <table name="msg_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__msg_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+      <table name="msg_lcl_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__msg_lcl_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+        
+     <table name="usr_grp"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__usr_grp__id_usr_grp</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+     <table name="usr_grp_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__usr_grp_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="usr_grp_grp_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__usr_grp_grp_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="usr"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__usr__id_usr</param>
+           </generator>
+      </primary-key>
+    </table>
+   
+    <table name="usr_lg"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__usr_lg__id_lg</param>
+           </generator>
+      </primary-key>
+    </table>
+      
+     <table name="model_instance"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MODEL_INSTANCE__ID_JPA_MODEL_INSTANCE</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+    <table name="model_analysis"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MODEL_ANALYSIS__ID_JPA_MODEL_ANALYSIS</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+      <table name="computational_task"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_COMPUTATIONAL_TASK__ID_JPA_COMPUTATIONAL_TASK</param>
+           </generator>
+      </primary-key>
+    </table>
+       <table name="host"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_HOST__ID_JPA_HOST</param>
+           </generator>
+      </primary-key>
+    </table>
+       <table name="comments"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_COMMENTS__ID_JPA_COMMENTS</param>
+           </generator>
+      </primary-key>
+    </table>
+        <table name="entity_attr_category"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_ENTITY_ATTR_CATEGORY__ID_JPA_ENTITY_ATTR_CATEGORY</param>
+           </generator>
+      </primary-key>
+    </table>
+          <table name="entity_spec"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_ENTITY_SPEC__ID_JPA_ENTITY_SPEC</param>
+           </generator>
+      </primary-key>
+    </table>
+     <table name="members_dictionary"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MEMBERS_DICTIONARY__ID_JPA_MEMBERS_DICTIONARY</param>
+           </generator>
+      </primary-key>
+    </table>
+        <table name="model"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MODEL__ID_JPA_MODEL</param>
+           </generator>
+      </primary-key>
+    </table>
+     
+      <table name="model_data_update"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MODEL_DATA_UPDATE__ID_JPA_MODEL_DATA_UPDATE</param>
+           </generator>
+      </primary-key>
+    </table>
+    
+     <table name="set_attr_category"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SET_ATTR_CATEGORY__ID_JPA_SET_ATTR_CATEGORY</param>
+           </generator>
+      </primary-key>
+    </table>
+       <table name="set_data"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SET_DATA__ID_JPA_SET_DATA</param>
+           </generator>
+      </primary-key>
+    </table>
+       <table name="set_spec"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SET_SPEC__ID_JPA_SET_SPEC</param>
+           </generator>
+      </primary-key>
+    </table>
+      <table name="solver"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SOLVER__ID_JPA_SOLVER</param>
+           </generator>
+      </primary-key>
+    </table>
+     <table name="tuple"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_TUPLE__ID_JPA_TUPLE</param>
+           </generator>
+      </primary-key>
+    </table>
+         <table name="model_spec_rev"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_MODEL_SPEC_REV__ID_JPA_MODEL_SPEC_REV</param>
+           </generator>
+      </primary-key>
+    </table>
+           <table name="set_spec_ver"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SET_SPEC_VER__ID_JPA_SET_SPEC_VER</param>
+           </generator>
+      </primary-key>
+    </table>
+          <table name="entity_spec_ver"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_ENTITY_SPEC_VER__ID_JPA_ENTITY_SPEC_VER</param>
+           </generator>
+      </primary-key>
+    </table>
+           <table name="file_upload_info"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_FILE_UPLOAD_INFO__ID_JPA_FILE_UPLOAD_INFO</param>
+           </generator>
+      </primary-key>
+    </table>
+           <table name="uploaded_entity"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_UPLOADED_ENTITY__ID_JPA_UPLOADED_ENTITY</param>
+           </generator>
+      </primary-key>
+    </table>
+            <table name="uploaded_set"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_UPLOADED_SET__ID_JPA_UPLOADED_SET</param>
+           </generator>
+      </primary-key>
+    </table>
+     <table name="entity_attr_category_element"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">seq__jpa_entity_attr_category_element__id_jpa_entity_attr_categ</param>
+           </generator>
+      </primary-key>
+    </table>
+
+       <table name="preference"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_PREFERENCE__ID_JPA_PREFERENCE</param>
+           </generator>
+      </primary-key>
+    </table>
+       <table name="set_attr"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_SET_ATTR__ID_JPA_SET_ATTR</param>
+           </generator>
+      </primary-key>
+    </table>
+         <table name="entity_attr"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__JPA_ENTITY_ATTR__ID_JPA_ENTITY_ATTR</param> 
+           </generator>
+      </primary-key>
+    </table>
+           <table name="iterator_atom"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__Jpa_Iterator_Atom__id_Jpa_Iterator_Atom</param>
+           </generator>
+      </primary-key>
+    </table>
+           <table name="iterator_container"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__Jpa_Iterator_Container__id_Jpa_Iterator_Container</param>
+           </generator>
+      </primary-key>
+    </table>
+           <table name="term"> 
+       <primary-key>
+          <generator class="sequence">
+             <param name="sequence">SEQ__Jpa_Term__id_Jpa_Term</param>
+           </generator>
+      </primary-key>
+    </table>
+</hibernate-reverse-engineering>

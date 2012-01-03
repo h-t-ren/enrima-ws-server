@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:modelinst="http://www.ime.iiasa.ac.at/smt/modelinst"
+    xmlns:md="http://www.ime.iiasa.ac.at/smt/modeldata"
+    xmlns:ms="http://www.ime.iiasa.ac.at/smt/modelspec"
+    targetNamespace="http://www.ime.iiasa.ac.at/smt/modelinst" elementFormDefault="qualified">
+    
+    <xs:import schemaLocation="model-spec.xsd"  namespace="http://www.ime.iiasa.ac.at/smt/modelspec" />
+    <xs:import schemaLocation="model-data.xsd"  namespace="http://www.ime.iiasa.ac.at/smt/modeldata" />
+    
+    <xs:complexType name="modelInstance">
+        <xs:all>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="idModel" type="xs:int" />
+            <xs:element name="idUpdate" type="xs:int" />
+            <xs:element name="label" type="xs:string" />
+            <xs:element name="shortDesc" type="ms:shortDesc" />
+            <xs:element name="longDesc" type="ms:longDesc" />
+            <xs:element name="auditable" type="ms:auditable" />
+        <!--    <xs:element name="status" type="ms:status" /> -->
+        </xs:all>
+    </xs:complexType>
+    
+</xs:schema>
